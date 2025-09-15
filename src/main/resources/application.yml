@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: Mind on Paper
+
+---
+spring:
+  profiles:
+    active: oauth
+  datasource:
+    url: jdbc:mysql://localhost:3306/mind_on_paper
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+---
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+      client:
+        registration:
+          google:
+            client-id: 683770554311-h1hgj7h7m5ma53d4jc1qdnct1l86i1o3.apps.googleusercontent.com
+            client-secret: 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
