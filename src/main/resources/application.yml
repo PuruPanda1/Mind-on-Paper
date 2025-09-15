@@ -5,7 +5,7 @@ spring:
 ---
 spring:
   profiles:
-    active: oauth
+    active: test
   datasource:
     url: jdbc:mysql://localhost:3306/mind_on_paper
     username: root

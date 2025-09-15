@@ -14,8 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@Profile("basic")
-public class BaseSecurityConfig {
+@Profile("test")
+public class TestSecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -26,10 +26,7 @@ public class BaseSecurityConfig {
         httpSecurity
                 .csrf().disable()
                 .authorizeHttpRequests(auth ->auth
-                        .requestMatchers("/blogs").hasAnyRole("ADMIN", "USER")
-                        .requestMatchers("/blogs/create").hasRole("ADMIN")
-                        .anyRequest()
-                        .authenticated()).httpBasic();
+                        .anyRequest().permitAll()).httpBasic();
         return httpSecurity.build();
     }
 

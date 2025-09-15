@@ -27,7 +27,8 @@ public class OAuthSecurityConfig {
             httpSecurity
                     .authorizeHttpRequests(auth -> auth
                             .requestMatchers("/blogs").permitAll()
-                            .anyRequest().authenticated()
+                            .requestMatchers("/swagger-ui/index.html").permitAll()
+                            .anyRequest().permitAll()
                     )
                     .oauth2Login(auth -> auth.defaultSuccessUrl("/blogs", true));
             return httpSecurity.build();
