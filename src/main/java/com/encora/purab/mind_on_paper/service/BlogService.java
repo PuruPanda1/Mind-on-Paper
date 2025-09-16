@@ -2,6 +2,7 @@ package com.encora.purab.mind_on_paper.service;
 
 import com.encora.purab.mind_on_paper.data.model.Blog;
 import com.encora.purab.mind_on_paper.data.repository.BlogRepository;
+import com.encora.purab.mind_on_paper.exceptions.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class BlogService {
     }
 
     public ResponseEntity<Blog> getBlogById(Long id){
-        return ResponseEntity.ok(blogRepository.findById(id).isPresent()?blogRepository.findById(id).get():new Blog());
+        return ResponseEntity.ok(blogRepository.findById(id).orElseThrow(() ->new ResourceNotFoundException("Blog not found")));
     }
 
     public ResponseEntity<Boolean> createBlog(Blog blog){

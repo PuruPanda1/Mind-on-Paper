@@ -14,7 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@Profile("test")
+@Profile("prod")
 public class TestSecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder(){
