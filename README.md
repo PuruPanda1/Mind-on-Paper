@@ -66,3 +66,30 @@ It demonstrates clean architecture with, REST API design, security configuration
 ## Build Tool: 
 
 - Maven
+
+## 📂 Project Structure
+```
+🗂️ mind-on-paper/
+├── 📁 src
+│   ├── 📝 main
+│   │   ├── 💻 java
+│   │   │   └── 🏢 com
+│   │   │       └── 🏢 encora
+│   │   │           └── 🏢 purab
+│   │   │               └── 📦 mind_on_paper
+│   │   │                   ├── 🎮 controller           # REST controllers
+│   │   │                   ├── 🗄️ data
+│   │   │                   │   ├── 📑 model            # Project Entity
+│   │   │                   │   └── 📚 repository       # Spring Data JPA Repos
+│   │   │                   ├── 🔐 security             # Security configuration (Basic Auth & OAuth)
+│   │   │                   ├── 🌀 aspect               # AOP (logging, exception handling)
+│   │   │                   └── 🚀 MindOnPaperApp.java  # The Spring Boot Application
+│   │   └── ⚙️ resources
+│   │       ├── 📄 application.yml       # Base application configuration file
+│   │       ├── 📄 application-prod.yml  # MySQL (prod)
+│   │       └── 📄 application-test.yml  # H2 (testing)
+│   └── 🧪 test
+│       └── 💻 java
+│           └── ...                                   # Unit & integration test cases
+└── 📦 pom.xml                                       # Spring Boot dependencies and versions
+```
