@@ -32,9 +32,9 @@ public class BlogService {
         return ResponseEntity.ok(isUpdated!=null);
     }
 
-    public ResponseEntity<Boolean> deleteBlog(Blog blog){
-        blogRepository.delete(blog);
-        boolean isDeleted = !blogRepository.existsById(blog.getBlogId());
+    public ResponseEntity<Boolean> deleteBlog(Long id){
+        blogRepository.deleteById(id);
+        boolean isDeleted = !blogRepository.existsById(id);
         return ResponseEntity.ok(isDeleted);
     }
 }

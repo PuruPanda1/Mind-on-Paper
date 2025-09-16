@@ -185,6 +185,6 @@ public class BlogController {
             )
     })
     ResponseEntity<Boolean> deleteBlog(@PathVariable Long id){
-        return deleteBlog(id);
+        return blogService.deleteBlog(id);
     }
 }

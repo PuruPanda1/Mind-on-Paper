@@ -18,6 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
+// Unit Test is done at service Layer
 public class BlogServiceTest {
 
     @Mock
@@ -91,7 +92,7 @@ public class BlogServiceTest {
 
         doNothing().when(blogRepository).deleteById(blog1.getBlogId());
 
-        ResponseEntity<Boolean> response = blogService.deleteBlog(blog1);
+        ResponseEntity<Boolean> response = blogService.deleteBlog(blog1.getBlogId());
 
         assertTrue(response.getBody());
         assertTrue(response.getBody().equals(true));
