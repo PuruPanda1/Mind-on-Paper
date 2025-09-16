@@ -1,4 +1,4 @@
-package com.encora.purab.mind_on_paper.exceptions;
+package com.encora.purab.mind_on_paper.aspect;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

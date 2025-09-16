@@ -14,7 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@Profile("oauth")
+@Profile("prod")
 public class OAuthSecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -28,7 +28,7 @@ public class OAuthSecurityConfig {
                     .authorizeHttpRequests(auth -> auth
                             .requestMatchers("/blogs").permitAll()
                             .requestMatchers("/swagger-ui/index.html").permitAll()
-                            .anyRequest().permitAll()
+                            .anyRequest().authenticated()
                     )
                     .oauth2Login(auth -> auth.defaultSuccessUrl("/blogs", true));
             return httpSecurity.build();

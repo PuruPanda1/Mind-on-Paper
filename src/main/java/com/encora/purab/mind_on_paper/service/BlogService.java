@@ -2,7 +2,7 @@ package com.encora.purab.mind_on_paper.service;
 
 import com.encora.purab.mind_on_paper.data.model.Blog;
 import com.encora.purab.mind_on_paper.data.repository.BlogRepository;
-import com.encora.purab.mind_on_paper.exceptions.ResourceNotFoundException;
+import com.encora.purab.mind_on_paper.aspect.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 

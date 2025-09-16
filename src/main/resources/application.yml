@@ -2,11 +2,7 @@ spring:
   application:
     name: Mind on Paper
 
----
-spring:
   profiles:
     active: prod
 
-
----
 
